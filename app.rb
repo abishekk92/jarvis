@@ -18,9 +18,16 @@ get '/query/:text' do
    request.body="text=#{params[:text]}"
    response=http.request(request)
    json_response= response.body
-   puts json_response
-   
-
-end
-
+   data=JSON.parse(json_response)
+   person=data['PERSON']
+   noun=data['NP']
+   location=data['LOCATION']
+   gpe=data['GPE']
+   unless person.empty?
+       results=query(person)
+   end
+end 
+def query(person)
+    puts person
+end 
 

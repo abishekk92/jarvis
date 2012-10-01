@@ -15,10 +15,15 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
+    thin (1.2.11-x86-mingw32)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     tilt (1.3.3)
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   httparty

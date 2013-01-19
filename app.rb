@@ -10,7 +10,7 @@ end
 
 get '/query/:text' do 
 
-   puts "Querying #{params[:text]}"
+   puts "Querying:#{params[:text]}"
    uri=URI("http://text-processing.com/")
    http=Net::HTTP.new(uri.host,uri.port)
    request=Net::HTTP::Post.new("/api/phrases/")
@@ -19,15 +19,11 @@ get '/query/:text' do
    response=http.request(request)
    json_response= response.body
    data=JSON.parse(json_response)
-   person=data['PERSON']
-   noun=data['NP']
-   location=data['LOCATION']
-   gpe=data['GPE']
-   unless person.empty?
-       results=query(person)
-   end
-end 
-def query(person)
-    puts person
+   puts data 
+   #construct_query(data)
+end
+
+def construct_query(data)
+	query={'query'=>{'id'=>data['NP'].first}}
 end 
 

@@ -1,10 +1,11 @@
-require 'sinatra'
+require 'sinatra' 
 require 'json'
 require 'net/http'
 require 'uri'
-get '/' do 
+require_relative './classifier'
 
-erb :index
+get '/' do 
+	erb :index
 end 
 
 
@@ -19,11 +20,19 @@ get '/query/:text' do
    response=http.request(request)
    json_response= response.body
    data=JSON.parse(json_response)
-   puts data 
-   #construct_query(data)
+   noun_phrases=extract_nouns(data)
+   location=extract_location(data)
+   category=Classifier.classify_category(noun_phrases)
 end
 
 def construct_query(data)
 	query={'query'=>{'id'=>data['NP'].first}}
+end 
+def extract_nouns(data)
+	return data['NP']
+end 
+
+def extract_location(data)
+      return data['LOCATION']+data['GPE']
 end 
 

@@ -15,10 +15,7 @@ class Classifier
 			   classified_category<<'command'
 		   end
 		end 
-	     return classified_category
+	      classified_category
 	end 
 end
-query=["what","weather","chennai"]
-result=Classifier.classify_category(query)
-print result
 

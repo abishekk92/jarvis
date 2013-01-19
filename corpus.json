@@ -5,6 +5,10 @@
 		"sunny",
 		"umbrella",
 		"the weather"
+		"cloudy",
+		"humid",
+		"balmy",
+		"windy"
 		],
 	"restaurant":[
 		      "chinese",
@@ -22,6 +26,11 @@
 		      "kfc",
 		      "subway",
 		      "mcdonalds"
+		      "KFC",
+		      "Subway",
+		      "McDonalds",
+		      "desserts",
+		      "ice-cream",
 		     ],
       "cricket":[
 	      	   "score",
@@ -30,7 +39,8 @@
 		   "cricket match",
 		   "odi match",
 		   "one day match",
-		   "innings"
+		   "innings",
+		   "t20"	
 	       ],
        
     "football":[

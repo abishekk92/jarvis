@@ -2,8 +2,13 @@
 <meta charset="utf-8">
 <title>Jarvis 1.0</title>
 <style>
+	body {
+		
+			background-image:url('/images/background.png');
+			background-repeat:repeat-x repeat-y;
+	}
   * {
-    font-family: Verdana, Arial, sans-serif;
+    font-family:"Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif; 
   }
   a:link {
     color:#000;
@@ -34,15 +39,15 @@
     text-align: center;
   }
   .final {
-    color: black;
+    color: white;
     padding-right: 3px; 
   }
   .interim {
     color: gray;
   }
   .info {
-    font-size: 14px;
-    text-align: center;
+    font-size: 18px;
+    text-align: center; 
     color: #777;
     display: none;
   }
@@ -67,9 +72,9 @@
     visibility: hidden;
   }
   #results {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
-    border: 1px solid #ddd;
+    /*border : 1px solid #ddd*/
     padding: 15px;
     text-align: left;
     min-height: 150px;
@@ -99,7 +104,7 @@
      Upgrade to <a href="//www.google.com/chrome">Chrome</a>
      version 25 or later.</p>
 </div>
-<div class="bottom">
+<div class="footer">
   <button id="start_button" onclick="startButton(event)">
     <img id="start_img" src="/images/mic1.png" alt="Start"></button>
 </div>
@@ -179,14 +184,14 @@ if (!('webkitSpeechRecognition' in window)) {
     }
   };
 
-  recognition.onend = function() {
+  recognition.onend = function() { //this is the code when the button is clicked the second time. 
     recognizing = false;
     if (ignore_onend) {
       return;
     }
     start_img.src = '/images/mic1.png';
     if (!final_transcript) {
-      showInfo('info_start');
+      showInfo('info_start'); //you may have to insert the ruby code here? 
       return;
     }
     showInfo('');

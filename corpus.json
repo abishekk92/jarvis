@@ -1,0 +1,52 @@
+{
+	"weather":[
+		"weather",
+		"rain",
+		"sunny",
+		"umbrella"
+		],
+	"restuarant":[
+		      "chinese",
+		      "italian",
+		      "mexican",
+		      "pizza",
+		      "coffee",
+		      "pasta",
+		      "south-indian",
+		      "dosa",
+		      "biryani",
+		      "chettinad",
+		      "chicken",
+		      "fried chicken",
+		      "KFC",
+		      "Subway",
+		      "McDonalds"
+		     ],
+      "cricket":[
+	      	   "score",
+      		   "match",
+		   "versus",
+		   "cricket-match",
+		   "odi match",
+		   "one day match",
+		   "innings"
+	       ],
+       
+    "football":[
+                  "game",
+    		  "versus",
+		  "match",
+		  "score",
+		  "goal"
+	      ],
+    "command":[
+    		"email",
+    		"mail",
+		"facebook",
+		"twitter",
+		"hacker news"
+		]
+}
+
+
+

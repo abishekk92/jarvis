@@ -23,16 +23,14 @@ get '/query/:text' do
    noun_phrases=extract_nouns(data)
    location=extract_location(data)
    category=Classifier.classify_category(noun_phrases)
+   print category.class
 end
 
-def construct_query(data)
-	query={'query'=>{'id'=>data['NP'].first}}
-end 
 def extract_nouns(data)
 	return data['NP']
 end 
 
 def extract_location(data)
-      return data['LOCATION']+data['GPE']
+      return data['GPE']
 end 
 

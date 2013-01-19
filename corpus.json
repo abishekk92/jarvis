@@ -3,7 +3,11 @@
 		"weather",
 		"rain",
 		"sunny",
-		"umbrella"
+		"umbrella",
+		"cloudy",
+		"humid",
+		"balmy",
+		"windy"
 		],
 	"restuarant":[
 		      "chinese",
@@ -29,7 +33,8 @@
 		   "cricket-match",
 		   "odi match",
 		   "one day match",
-		   "innings"
+		   "innings",
+		   "t20"	
 	       ],
        
     "football":[

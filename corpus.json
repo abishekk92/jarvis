@@ -3,9 +3,10 @@
 		"weather",
 		"rain",
 		"sunny",
-		"umbrella"
+		"umbrella",
+		"the weather"
 		],
-	"restuarant":[
+	"restaurant":[
 		      "chinese",
 		      "italian",
 		      "mexican",
@@ -18,15 +19,15 @@
 		      "chettinad",
 		      "chicken",
 		      "fried chicken",
-		      "KFC",
-		      "Subway",
-		      "McDonalds"
+		      "kfc",
+		      "subway",
+		      "mcdonalds"
 		     ],
       "cricket":[
 	      	   "score",
       		   "match",
 		   "versus",
-		   "cricket-match",
+		   "cricket match",
 		   "odi match",
 		   "one day match",
 		   "innings"

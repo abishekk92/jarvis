@@ -6,7 +6,7 @@ class Corpus
 	      data=JSON.parse(json_text)
 	      category=String.new
 	      data.each do |key,value|
-		    category=value if data[key].include? look_up_query 
+		    category=key if data[key].include? look_up_query 
 	      end  
 	      return category
 	end 

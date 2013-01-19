@@ -1,19 +1,24 @@
 require_relative './custom_string'
 class Classifier 
 	def self.classify_category(noun_phrases)
+	     classified_category=[]
 	     noun_phrases.each do |noun_phrase| 
 		   if noun_phrase.is_weather?
-			   return 'weather' 
+			   classified_category<<'weather' 
 		   elsif noun_phrase.is_restaurant?
-			   return 'restuarant'
+			   classified_category<<'restuarant'
 		   elsif noun_phrase.is_cricket?
-			   return 'cricket'
+			   classified_category<<'cricket'
 	           elsif noun_phrase.is_football?
-			   return 'football'
+			   classified_category<<'football'
 		   elsif noun_phrase.is_command?
-			   return 'command'
+			   classified_category<<'command'
 		   end
 		end 
+	     return classified_category
 	end 
-end 
+end
+query=["what","weather","chennai"]
+result=Classifier.classify_category(query)
+print result
 

@@ -23,7 +23,7 @@ get '/query/:text' do
    noun_phrases=extract_nouns(data)
    location=extract_location(data)
    category=Classifier.classify_category(noun_phrases)
-   print category.class
+   print category
 end
 
 def extract_nouns(data)
@@ -31,6 +31,6 @@ def extract_nouns(data)
 end 
 
 def extract_location(data)
-      return data['GPE']
+      return data['GPE']||data['LOCATION']
 end 
 

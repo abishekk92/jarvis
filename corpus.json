@@ -4,7 +4,6 @@
 		"rain",
 		"sunny",
 		"umbrella",
-		"the weather",
 		"cloudy",
 		"humid",
 		"balmy",
@@ -33,10 +32,10 @@
 	      	   "score",
       		   "match",
 		   "versus",
-		   "the cricket match",
-		   "the odi match",
-		   "the one day match",
-		   "the innings",
+		   "cricket match",
+		   "odi match",
+		   "one day match",
+		   "innings",
 		   "t20"	
 	       ],
        
@@ -46,8 +45,8 @@
 		  "match",
 		  "score",
 		  "goal",
-		  "the football match",
-		  "the football game",
+		  "football match",
+		  "football game",
 		  "football"
 	      ],
     "command":[

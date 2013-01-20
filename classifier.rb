@@ -9,7 +9,7 @@ class Classifier
 			   classified_category='weather'
 			   classified=true 
 		   elsif noun_phrases[depth].is_restaurant?
-			   classified_category='restuarant'
+			   classified_category='restaurant'
 			   classified=true 
 		   elsif noun_phrases[depth].is_cricket?
 			   classified_category='cricket'

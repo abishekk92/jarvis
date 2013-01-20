@@ -3,13 +3,12 @@ require 'json'
 require 'nokogiri'
 class APIHelper
 
-	def self.call(query,category)
-   
+	def self.call(query,category,location="chennai")
 	 	case category
 		when /weather/
-			 accu_weather(query)
+			 accu_weather(location)
 		when /restaurant/
-			 zomato(query)
+			 zomato(location,query)
 		when /cricket/
 			 cricinfo
 		when /football/
@@ -18,18 +17,19 @@ class APIHelper
 	    end 
 	end
 
- 	def self.accu_weather(query)
-		end_point="http://openweathermap.org/data/2.1/find/name?q=#{query}"
+ 	def self.accu_weather(location)
+		end_point="http://openweathermap.org/data/2.1/find/name?q=#{location}"
 		result=JSON.parse open(end_point).read
 		weather_data=result["list"].first
 		{:type=>"weather",:main=>weather_data["main"],:wind=>weather_data["wind"],:clouds=>weather_data["clouds"],:gist=>weather_data["weather"],:external_url=>weather_data["url"]}		
 	end 
 
 	def self.zomato(location,query)
-	     end_point="http://www.zomato.com/#{location}/restaurants/#{query}"
+	     puts "#{location}:#{query}"
+	     end_point="http://www.zomato.com/#{location.downcase}/restaurants/#{query}"
 	     html_document=Nokogiri::HTML(open(end_point))
 	     restaurants=html_document.css('h3.search-result-title a').collect{|search_result| search_result['title']}
-	     	{:type=>"restaurants",:suggestions=>restaurants}
+	     {:type=>"restaurants",:suggestions=>restaurants}
 	end 	
 
 	def self.cricinfo
@@ -58,3 +58,4 @@ class APIHelper
 	      {:type=>"football_score",:results=>score}
 	end 	
 end
+

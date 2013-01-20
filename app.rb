@@ -21,27 +21,18 @@ get '/query/:text' do
    json_response= response.body
    data=JSON.parse(json_response)
    noun_phrases=extract_nouns(data)
-   location=extract_location(data)
+   location=extract_location(data).first
    category=Classifier.classify_category(noun_phrases)
-   query=construct_query(location,noun_phrases)
+   query=Corpus.value
    print noun_phrases
    if category=='command'
    	json_response=exec_command(query)
    else 
-   	json_response=APIHelper.call(query,category)
+   	json_response=APIHelper.call(query,category,location)
    end 
    	json_response.to_json
 
 end
-
-def construct_query(location,noun_phrases)
-        if location.nil?
-		 noun_phrases.sample
-	else
-		(location+noun_phrases).sample
-	end
-
-end 
 
 def extract_nouns(data)
 	return data['NP']

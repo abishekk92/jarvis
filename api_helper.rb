@@ -39,18 +39,22 @@ class APIHelper
 			 search_result.css('div.schd_data').collect{ |news_item| news_item.content }
 
 		end
-		{:type=>"cricket_score",:result=>score}
+		{:type=>"cricket_score",:results=>score}
 	        	
 	end 	
 
-	def espn(query)
-
-		 query
-
-	end 
-
+	def espn
+	   end_point="http://www.premierleague.com/en-gb/matchday/results.html?paramComp_100=true&view=.dateSeason"
+	   base_url="http://www.premierleague.com"
+	   html_document=Nokogiri::HTML(open(end_point))
+	   data_table=html_document.css('table.contentTable').first.css('tr')
+	   score=data_table[1..data_table.length].collect do |result|
+		   
+		home_team=result.css('td.clubs.rHome a').first
+		score=result.css('td.clubs.score a').first
+		away_team=result.css('td.clubs.rAway a').first
+		result={:home=>{:team=>home_team.content,:url=>base_url+home_team['href']},:score=>{:match_score=>score.content,:url=>base_url+score['href']},:away=>{:team=>away_team.content,:url=>base_url+away_team['href']}}
+	   end  
+	      {:type=>"football_score",:results=>score}
+	end 	
 end 
-api=APIHelper.new 
-hash_set=api.cricinfo
-print hash_set.to_json
-

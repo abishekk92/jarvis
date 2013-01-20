@@ -33,10 +33,10 @@
 	      	   "score",
       		   "match",
 		   "versus",
-		   "cricket match",
-		   "odi match",
-		   "one day match",
-		   "innings",
+		   "the cricket match",
+		   "the odi match",
+		   "the one day match",
+		   "the innings",
 		   "t20"	
 	       ],
        
@@ -45,7 +45,10 @@
     		  "versus",
 		  "match",
 		  "score",
-		  "goal"
+		  "goal",
+		  "the football match",
+		  "the football game",
+		  "football"
 	      ],
     "command":[
     		"email",

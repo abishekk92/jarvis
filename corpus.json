@@ -4,7 +4,7 @@
 		"rain",
 		"sunny",
 		"umbrella",
-		"the weather"
+		"the weather",
 		"cloudy",
 		"humid",
 		"balmy",
@@ -25,12 +25,9 @@
 		      "fried chicken",
 		      "kfc",
 		      "subway",
-		      "mcdonalds"
-		      "KFC",
-		      "Subway",
-		      "McDonalds",
+		      "mcdonalds",
 		      "desserts",
-		      "ice-cream",
+		      "ice-cream"
 		     ],
       "cricket":[
 	      	   "score",

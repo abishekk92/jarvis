@@ -11,9 +11,9 @@ class APIHelper
 		when /restaurant/
 			 zomato(query)
 		when /cricket/
-			 cricinfo(query)
+			 cricinfo
 		when /football/
-			 espn(query)
+			 espn
 				
 	    end 
 	end

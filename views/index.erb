@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <meta charset="utf-8">
 <title>Jarvis 1.0</title>
 <style>
@@ -224,7 +225,6 @@ function upgrade() {
   start_button.style.visibility = 'hidden';
   showInfo('info_upgrade');
 }
-
 var two_line = /\n\n/g;
 var one_line = /\n/g;
 function linebreak(s) {
@@ -252,6 +252,15 @@ function startButton(event) {
     recognition.stop();
     return;
   }
+  $.getJSON("/query", function(data) { //output JSON to the div? 
+	  var output =" <ul>";
+		  for (var i in //) {
+			  output += "<li>" + .url + "</li>";
+		  }
+		  output += "</ul>";
+	  document.getElementById("#results").innerHTML = output;
+  });
+
   final_transcript = '';
   recognition.lang = select_dialect.value;
   recognition.start();

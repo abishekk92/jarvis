@@ -31,6 +31,7 @@
       "cricket":[
 	      	   "score",
       		   "match",
+		   "mathches",
 		   "versus",
 		   "cricket match",
 		   "odi match",
@@ -47,7 +48,10 @@
 		  "goal",
 		  "football match",
 		  "football game",
-		  "football"
+		  "football",
+		  "football matches",
+		  "football games",
+		  "games"
 	      ],
     "command":[
     		"email",

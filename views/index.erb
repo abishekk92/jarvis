@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <meta charset="utf-8">
+<script src="http://wwww.ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <title>Jarvis 1.0</title>
 <style>
 	body {
@@ -106,10 +107,11 @@
      version 25 or later.</p>
 </div>
 <div class="bottom">
+	 
   <button id="start_button" onclick="startButton(event)">
     <img id="start_img" src="/images/mic1.png" alt="Start"></button>
 </div>
-<div id="results">
+<div id="results"> 
   <span id="final_span" class="final"></span>
   <span id="interim_span" class="interim"></span>
   <p>
@@ -214,6 +216,9 @@ if (!('webkitSpeechRecognition' in window)) {
     }
     final_transcript = capitalize(final_transcript);
     final_span.innerHTML = linebreak(final_transcript);
+   /* $.getJSON("/query/"+final_transcript,function(data){
+	    alert(data);
+    });*/
     interim_span.innerHTML = linebreak(interim_transcript);
     if (final_transcript || interim_transcript) {
       showButtons('inline-block');
@@ -249,17 +254,18 @@ function copyButton() {
 
 function startButton(event) {
   if (recognizing) {
-    recognition.stop();
+	  recognition.stop();
+	 /* $.getJSON('/query',{text:final_transcript},function(){
+	     alert("Success");
+	     });*/
+	 open('http://localhost:4567/query/'+final_transcript);
     return;
   }
-  $.getJSON("/query", function(data) { //output JSON to the div? 
-	  var output =" <ul>";
-		  for (var i in //) {
-			  output += "<li>" + .url + "</li>";
-		  }
-		  output += "</ul>";
-	  document.getElementById("#results").innerHTML = output;
-  });
+
+  function open(url){
+	  window.open(url, '_blank');
+	  window.focus();
+  }
 
   final_transcript = '';
   recognition.lang = select_dialect.value;
@@ -271,6 +277,7 @@ function startButton(event) {
   showInfo('info_allow');
   showButtons('none');
   start_timestamp = event.timeStamp;
+
 }
 
 function showInfo(s) {

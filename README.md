@@ -1,13 +1,13 @@
-#Jarvis - Knowledge Engine and a cool friend
+Jarvis - Knowledge Engine and a cool friend
 ============
 
-##Architecture
+Architecture
 -----------
 *Web app
 *[Web speech API](http://www.speechapi.com/)
 *[Sinatra](http://www.sinatrarb.com/)
 
-##Building the project locally
+Building the project locally
 --------------
     $ cd
     $ gem instal sinatra
